@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportswear Store</title> 
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">SPORTSWEAR</a>
+                    <button class="btn btn-info" onclick="viewCart()">View Cart</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <h1>Featured Products</h1>
+        <div class="row" id="product-container"></div> 
+        <h2>Add a New Product</h2>
+    <form id="add-product-form">
+        <div class="mb-3">
+            <label for="product-title" class="form-label">Product Title</label>
+            <input type="text" id="product-title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="product-price" class="form-label">Product Price</label>
+            <input type="text" id="product-price" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="product-image" class="form-label">Product Image URL</label>
+            <input type="text" id="product-image" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+
+    </main>
+
+    <footer class="text-center mt-4">
+        <div>
+            <a href="#" class="d-block">About Us</a>
+            <a href="#" class="d-block">Contact</a>
+        </div>
+        <p>&copy; 2024 Sportswear Store. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script> 
+
+    <script>
+        const products = [
+            {
+                title: "Goalkeeper Gloves",
+                price: "$29.99",
+                image: "photos/KEEPERsport_Italia_lo_specialista_per_i_portieri.jpeg"
+            },
+            {
+                title: "Sports T-shirt",
+                price: "$49.99",
+                image: "photos/8cf7ffcf-f6d3-4bc8-90da-d63c3a16804a.jpeg"
+            },
+            {
+                title: "Running Shoes",
+                price: "$39.99",
+                image: "photos/Kit 2 Pares De Tênis Feminino Esportivo Caminhada.jpeg"
+            },
+            {
+                title: "Baseball Cap",
+                price: "$19.99",
+                image: "photos/baseball cap.jpeg" 
+            },
+            {
+                title: "Volleyball",
+                price: "$29.99",
+                image: "photos/Volleyball Balls - Volleyballs.jpeg" 
+            },
+            {
+                title: "Jogging Pants",
+                price: "$39.99",
+                image: "photos/jogging pants.jpeg" 
+            },
+            {
+                title: "Football",
+                price: "$34.99",
+                image: "photos/football.jpg" 
+            },
+            {
+                title: "Tennis Kit",
+                price: "$89.99",
+                image: "photos/Tennis Gear and Accessories Guide.jpeg"
+            },
+            {
+                title: "Kickboxing Gloves",
+                price: "$14.99",
+                image: "photos/Kickboxen Handpratzen.jpeg"
+            },
+            {
+                title: "Boxing Gloves",
+                price: "$49.99",
+                image: "photos/Venum Elite Boxing Gloves Khaki_Black - 12oz.jpeg" 
+            },
+            {
+                title: "Football Shoes",
+                price: "$59.99",
+                image: "photos/football shoes.jpeg" 
+            }
+        ];
+
+        let cart = [];
+
+        function displayProducts() {
+            const container = document.getElementById('product-container');
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'col-md-4';
+                card.innerHTML = `
+                    <div class="card">
+                        <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.title}</h5>
+                            <p class="card-text">${product.price}</p>
+                            <button class="btn btn-primary" onclick="addToCart('${product.title}', '${product.price}')">Add to Cart</button>
+                            <button class="btn btn-danger mt-2" onclick="deleteItem(this)">Delete</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            alert(`${title} has been added to your cart.`);
+        }
+
+        window.onload = displayProducts;
+
+        function deleteItem(button) {
+            const card = button.closest('.card');
+            card.remove();
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+            } else {
+                let cartItems = cart.map(item => `${item.title}: ${item.price}`).join('\n');
+                alert(`Your cart:\n${cartItems}`);
+            }
+        }
+    </script>
+</body>
+</html>
