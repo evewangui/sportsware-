@@ -1,0 +1,72 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Goalkeeper Gloves",
+        "price": "$29.99",
+        "image": "photos/KEEPERsport_Italia_lo_specialista_per_i_portieri.jpeg"
+      },
+      {
+        "id": 2,
+        "title": "Sports T-shirt",
+        "price": "$49.99",
+        "image": "photos/8cf7ffcf-f6d3-4bc8-90da-d63c3a16804a.jpeg"
+      },
+      {
+        "id": 3,
+        "title": "Running Shoes",
+        "price": "$39.99",
+        "image": "photos/Kit 2 Pares De Tênis Feminino Esportivo Caminhada.jpeg"
+      },
+      {
+        "id": 4,
+        "title": "Baseball Cap",
+        "price": "$19.99",
+        "image": "photos/baseball cap.jpeg"
+      },
+      {
+        "id": 5,
+        "title": "Volleyball",
+        "price": "$29.99",
+        "image": "photos/Volleyball Balls - Volleyballs.jpeg"
+      },
+      {
+        "id": 6,
+        "title": "Jogging Pants",
+        "price": "$39.99",
+        "image": "photos/jogging pants.jpeg"
+      },
+      {
+        "id": 7,
+        "title": "Football",
+        "price": "$34.99",
+        "image": "photos/football.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Tennis Kit",
+        "price": "$89.99",
+        "image": "photos/Tennis Gear and Accessories Guide.jpeg"
+      },
+      {
+        "id": 9,
+        "title": "Kickboxing Gloves",
+        "price": "$14.99",
+        "image": "photos/Kickboxen Handpratzen.jpeg"
+      },
+      {
+        "id": 10,
+        "title": "Boxing Gloves",
+        "price": "$49.99",
+        "image": "photos/Venum Elite Boxing Gloves Khaki_Black - 12oz.jpeg"
+      },
+      {
+        "id": 11,
+        "title": "Football Shoes",
+        "price": "$59.99",
+        "image": "photos/football shoes.jpeg"
+      }
+    ],
+    "cart": []
+  }
+  
